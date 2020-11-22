@@ -19,6 +19,18 @@
     </nav>
 
     <div class="container mt-3">
+        {% if messages %}
+            <div class="row mt-3 mb-3">
+                <div class="col-12">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
         {% block content %}{% endblock %}
     </div>
 

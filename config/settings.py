@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from .db import MYSQL
+from django.contrib.messages import constants as message_constants
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Paquetes del proyecto
-    # Mis aplicaciones de
+    'crispy_forms',
+
+    # Mis aplicaciones
     'blog',
     'autenticacion',
 ]
@@ -130,3 +133,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "statics")
 ]
+
+# template formularios bootstrap 4
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# clases para los mensajes flash de bootstrap
+MESSAGE_TAGS = {
+    message_constants.DEBUG: 'debug',
+    message_constants.INFO: 'info',
+    message_constants.SUCCESS: 'success',
+    message_constants.WARNING: 'warning',
+    message_constants.ERROR: 'danger',
+}
