@@ -93,3 +93,17 @@ O
 	manage.py,3\1\3156ad13e4d695cd526bbb7b031016ecba842270
 B
 config/settings.py,7\6\769aa6664d3e5c284cbfb95fd9848a351a2e4e2b
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+T
+$autenticacion/templates/acceder.html,1\a\1aa1ef7b32467b00f1fd901a53dc29921755fc42
+O
+blog/migrations/0001_initial.py,6\a\6ac04652113ffb17787ba12d1b36b7a14c3a7a7a
+L
+blog/migrations/0002_post.py,9\e\9eb3ff63de44d5edd618680fbc96bf9802d6d38d
+=
+blog/forms.py,8\d\8dc45ed33dbcc8b65458ba016179df9d26f67b91
+H
+blog/templates/blog.html,e\4\e4e7ce987b3a44a564aa21e8e686c17c613a7e12
+O
+blog/templates/create_post.html,5\9\5992ec12969594fd5ac9a2fc1607bf7276c24eab
