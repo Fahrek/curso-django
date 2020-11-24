@@ -1,10 +1,18 @@
 from django.shortcuts import render, redirect
 from blog.forms import FormularioPost
 from django.contrib import messages
+from blog.models import Post
+from django.core.paginator import Paginator
 
 
 def index(request):
-    return render(request, "blog.html")
+    listado_posts = Post.objects.all()
+    paginator = Paginator(listado_posts, 3)
+    pagina = request.GET.get("page") or 1
+    posts = paginator.get_page(pagina)
+    pagina_actual = int(pagina)
+    paginas = range(1, posts.paginator.num_pages + 1)
+    return render(request, "blog.html", {"posts": posts, "paginas": paginas, "pagina_actual": pagina_actual})
 
 
 def crear_post(request):

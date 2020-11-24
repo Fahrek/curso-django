@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Categoria(models.Model):
     nombre = models.CharField(max_length=100, null=False, unique=True, verbose_name='Nombre')
@@ -16,11 +17,11 @@ class Categoria(models.Model):
 
 
 class Post(models.Model):
-    autor     = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    autor = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    titulo    = models.CharField(max_length=100, null=False, unique=True, verbose_name='Título')
+    titulo = models.CharField(max_length=100, null=False, unique=True, verbose_name='Título')
     contenido = models.TextField(null=True, verbose_name='Contenido del post')
-    imagen    = models.ImageField(upload_to='posts/%Y/%m/%d', null=True, blank=True, verbose_name='Imagen del post')
+    imagen = models.ImageField(upload_to='posts/%Y/%m/%d', null=True, blank=True, verbose_name='Imagen del post')
     fecha_alta = models.DateTimeField(auto_now_add=True)
     fecha_actualizacion = models.DateTimeField(auto_now_add=True)
 
