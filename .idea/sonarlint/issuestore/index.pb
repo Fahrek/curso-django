@@ -107,3 +107,5 @@ H
 blog/templates/blog.html,e\4\e4e7ce987b3a44a564aa21e8e686c17c613a7e12
 O
 blog/templates/create_post.html,5\9\5992ec12969594fd5ac9a2fc1607bf7276c24eab
+N
+blog/templates/paginacion.html,3\f\3f560a69a19bb166e06e1f6ddc45092a907de431
