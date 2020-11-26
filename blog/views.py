@@ -3,8 +3,10 @@ from blog.forms import FormularioPost
 from django.contrib import messages
 from blog.models import Post
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
 
+@login_required(login_url="accounts/acceder")
 def index(request):
     listado_posts = Post.objects.all()
     paginator = Paginator(listado_posts, 3)
@@ -15,6 +17,7 @@ def index(request):
     return render(request, "blog.html", {"posts": posts, "paginas": paginas, "pagina_actual": pagina_actual})
 
 
+@login_required(login_url="accounts/acceder")
 def crear_post(request):
     if request.method == "POST":
         form = FormularioPost(request.POST, request.FILES)
@@ -33,6 +36,7 @@ def crear_post(request):
     return render(request, "create_post.html", {"form": form})
 
 
+@login_required(login_url="accounts/acceder")
 def eliminar_post(request, post_id):
     try:
         post = Post.objects.get(pk=post_id)
